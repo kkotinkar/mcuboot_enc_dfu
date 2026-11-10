@@ -1,0 +1,9 @@
+/* slot1 (firmware loader) grows to 72 KB, slot0 shrinks to keep the SoftDevice at 0x15a000 */
+
+&slot0_partition {
+	reg = <0x0000a000 DT_SIZE_K(1272)>;
+};
+
+&slot1_partition {
+	reg = <0x00148000 DT_SIZE_K(72)>;
+};

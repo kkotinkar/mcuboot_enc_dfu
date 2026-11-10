@@ -1,8 +1,8 @@
 sample:
-  description: MCUboot buttonless entry Bluetooth LE, for firmware loader mode
-  name: MCUboot buttonless entry Bluetooth LE
+  description: MCUboot buttonless entry Bluetooth LE, for firmware loader mode, with encrypted image DFU
+  name: MCUboot buttonless entry Bluetooth LE, encrypted image
 tests:
-  sample.boot.mcuboot_recovery_entry:
+  sample.boot.mcuboot_enc_dfu:
     sysbuild: true
     build_only: true
     integration_platforms:
@@ -24,24 +24,3 @@ tests:
       - bm_nrf54lv10dk/nrf54lv10a/cpuapp/s145_softdevice/mcuboot
     tags:
       - sysbuild
-  sample.boot.mcuboot_recovery_entry.size_optimized:
-    sysbuild: true
-    build_only: true
-    integration_platforms:
-      - bm_nrf54l15dk/nrf54l05/cpuapp/s145_softdevice/mcuboot
-      - bm_nrf54lv10dk/nrf54lv10a/cpuapp/s115_softdevice/mcuboot
-    platform_allow:
-      - bm_nrf54l15dk/nrf54l05/cpuapp/s115_softdevice/mcuboot
-      - bm_nrf54l15dk/nrf54l05/cpuapp/s145_softdevice/mcuboot
-      - bm_nrf54l15dk/nrf54l10/cpuapp/s115_softdevice/mcuboot
-      - bm_nrf54l15dk/nrf54l10/cpuapp/s145_softdevice/mcuboot
-      - bm_nrf54l15dk/nrf54l15/cpuapp/s115_softdevice/mcuboot
-      - bm_nrf54l15dk/nrf54l15/cpuapp/s145_softdevice/mcuboot
-      - bm_nrf54lv10dk/nrf54lv10a/cpuapp/s115_softdevice/mcuboot
-      - bm_nrf54lv10dk/nrf54lv10a/cpuapp/s145_softdevice/mcuboot
-      - bm_nrf54lm20dk/nrf54lm20a/cpuapp/s115_softdevice/mcuboot
-      - bm_nrf54lm20dk/nrf54lm20a/cpuapp/s145_softdevice/mcuboot
-    tags:
-      - sysbuild
-    extra_args:
-      - FILE_SUFFIX=size_opt
